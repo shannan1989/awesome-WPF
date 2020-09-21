@@ -9,7 +9,7 @@ using System.Runtime.InteropServices;
 [assembly: AssemblyConfiguration("")]
 [assembly: AssemblyCompany("山南小站")]
 [assembly: AssemblyProduct("Shannan.Core")]
-[assembly: AssemblyCopyright("Copyright © shannan 2020")]
+[assembly: AssemblyCopyright("Copyright © Shannan 2020")]
 [assembly: AssemblyTrademark("Shannan")]
 [assembly: AssemblyCulture("")]
 
