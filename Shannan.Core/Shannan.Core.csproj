@@ -63,6 +63,7 @@
   </ItemGroup>
   <ItemGroup>
     <Compile Include="Controls\ControlsHelper.cs" />
+    <Compile Include="Controls\ImageHelper.cs" />
     <Compile Include="Controls\TextBoxHelper.cs" />
     <Compile Include="Controls\ToggleButtonHelper.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
