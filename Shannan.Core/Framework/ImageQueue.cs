@@ -14,7 +14,7 @@ namespace Shannan.Core.Framework
         public Image Image { get; set; }
     }
 
-    public static class ImageQueue
+    internal static class ImageQueue
     {
         public delegate void DownloadCompletedEventHandler(Image image, string url, BitmapImage bitmapImage);
 
