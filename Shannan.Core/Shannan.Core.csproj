@@ -68,6 +68,7 @@
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\OppositeConverter.cs" />
     <Compile Include="Framework\DataRequest.cs" />
+    <Compile Include="Framework\ImageQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
     <Compile Include="ShanDialog.cs" />
     <Compile Include="ShanWindow.cs" />
