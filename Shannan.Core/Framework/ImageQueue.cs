@@ -38,6 +38,7 @@ namespace Shannan.Core.Framework
         {
             while (true)
             {
+                GC.Collect();
                 ImageQueueItem item = null;
                 lock (stacks)
                 {
