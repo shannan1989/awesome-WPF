@@ -1,8 +1,8 @@
-﻿using System.Windows;
+﻿using Shannan.Core;
 
 namespace Kiwi
 {
-    public partial class MainWindow : Window
+    public partial class MainWindow : ShanWindow
     {
         public MainWindow()
         {
