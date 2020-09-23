@@ -68,6 +68,7 @@
     <Compile Include="Controls\ToggleButtonHelper.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
     <Compile Include="Converters\OppositeConverter.cs" />
+    <Compile Include="Extensions\AnimationExtension.cs" />
     <Compile Include="Framework\DataRequest.cs" />
     <Compile Include="Framework\ImageQueue.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
@@ -76,7 +77,6 @@
     <Compile Include="Utils\ProcessUtils.cs" />
     <Compile Include="Utils\VisualTreeUtils.cs" />
   </ItemGroup>
-  <ItemGroup />
   <ItemGroup>
     <None Include="packages.config" />
   </ItemGroup>
