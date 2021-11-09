@@ -20,6 +20,7 @@ namespace Shannan.Core.Controls
                     DoubleAnimation doubleAnimation = new DoubleAnimation(0.0, 1.0, new Duration(TimeSpan.FromMilliseconds(500.0)));
                     Storyboard.SetTarget(doubleAnimation, image);
                     Storyboard.SetTargetProperty(doubleAnimation, new PropertyPath("Opacity", new object[0]));
+
                     Storyboard storyboard = new Storyboard();
                     storyboard.Children.Add(doubleAnimation);
                     storyboard.Begin();
@@ -37,9 +38,9 @@ namespace Shannan.Core.Controls
             obj.SetValue(SourceProperty, value);
         }
 
-        public static readonly DependencyProperty SourceProperty = DependencyProperty.RegisterAttached("Source", typeof(string), typeof(ImageHelper), new PropertyMetadata(string.Empty, SourcePropertyChanged));
+        public static readonly DependencyProperty SourceProperty = DependencyProperty.RegisterAttached("Source", typeof(string), typeof(ImageHelper), new PropertyMetadata(string.Empty, OnSourcePropertyChanged));
 
-        private static void SourcePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        private static void OnSourcePropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
         {
             ImageQueue.Push(d as Image, e.NewValue.ToString());
         }
