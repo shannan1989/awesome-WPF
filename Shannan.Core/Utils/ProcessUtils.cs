@@ -4,31 +4,32 @@ using System.IO;
 
 namespace Shannan.Core.Utils
 {
-    public class ProcessUtils
+    public static class ProcessUtils
     {
         public static void OpenFile(string fileName)
         {
-            if (File.Exists(fileName))
+            if (!File.Exists(fileName))
             {
-                try
-                {
-                    Process process = new Process();
-                    process.StartInfo = new ProcessStartInfo()
-                    {
-                        FileName = fileName,
-                        Verb = "Open",
-                        CreateNoWindow = true
-                    };
-                    process.Start();
-                }
-                catch (Exception)
-                {
-                    OpenDirectory(Path.GetDirectoryName(fileName));
-                }
-            }
-            else
-            {
+#if DEBUG
                 throw new Exception("打开文件失败，文件或已丢失");
+#else
+                return;
+#endif
+            }
+            try
+            {
+                Process process = new Process();
+                process.StartInfo = new ProcessStartInfo()
+                {
+                    FileName = fileName,
+                    Verb = "Open",
+                    CreateNoWindow = true
+                };
+                process.Start();
+            }
+            catch (Exception)
+            {
+                OpenDirectory(Path.GetDirectoryName(fileName));
             }
         }
 
