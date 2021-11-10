@@ -46,5 +46,41 @@ namespace Shannan.Core.Extensions
             }
             transform.BeginAnimation(dp, a);
         }
+
+        /// <summary>
+        /// 使元素持续旋转
+        /// </summary>
+        /// <param name="element">元素</param>
+        /// <param name="duration">旋转时长</param>
+        public static void RotateForever(this FrameworkElement element, TimeSpan duration)
+        {
+            element.RenderTransform = new RotateTransform();
+            element.RenderTransformOrigin = new Point(0.5, 0.5);
+
+            DoubleAnimation a = new DoubleAnimation(0, 360, duration);
+            Storyboard.SetTarget(a, element);
+            Storyboard.SetTargetProperty(a, new PropertyPath("RenderTransform.Angle"));
+
+            Storyboard storyboard = new Storyboard()
+            {
+                RepeatBehavior = RepeatBehavior.Forever
+            };
+            storyboard.Children.Add(a);
+            storyboard.Begin();
+        }
+
+        public static void FadeInOut(this FrameworkElement element, TimeSpan duration)
+        {
+            DoubleAnimation a = new DoubleAnimation(1, duration);
+            Storyboard.SetTarget(a, element);
+            Storyboard.SetTargetProperty(a, new PropertyPath("Opacity"));
+
+            Storyboard storyboard = new Storyboard()
+            {
+                AutoReverse = true
+            };
+            storyboard.Children.Add(a);
+            storyboard.Begin();
+        }
     }
 }
