@@ -28,9 +28,10 @@ namespace Shannan.Core.Debugging
         {
             _ravenClient = new RavenClient(dsn);
             _ravenClient.Release = Client.Instance.AppName + "@" + Client.Instance.AppVersion;
-            _ravenClient.Environment = "production";
 #if DEBUG
             _ravenClient.Environment = "development";
+#else
+            _ravenClient.Environment = "production";
 #endif
         }
 
