@@ -114,5 +114,14 @@ namespace Shannan.Core.Framework
                 autoResetEvent.Set();
             }
         }
+
+        public static void Clear()
+        {
+            lock (stacks)
+            {
+                stacks.Clear();
+                autoResetEvent.Set();
+            }
+        }
     }
 }
