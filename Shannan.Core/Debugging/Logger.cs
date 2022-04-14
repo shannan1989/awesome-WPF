@@ -2,6 +2,7 @@
 using SharpRaven;
 using SharpRaven.Data;
 using System;
+using System.Collections.Generic;
 
 namespace Shannan.Core.Debugging
 {
@@ -44,6 +45,20 @@ namespace Shannan.Core.Debugging
             try
             {
                 _ravenClient.Capture(new SentryEvent(e));
+            }
+            catch (Exception)
+            { }
+        }
+
+        public void ReportException(Exception e, Dictionary<string, string> tags)
+        {
+            if (_ravenClient == null)
+            {
+                return;
+            }
+            try
+            {
+                _ravenClient.Capture(new SentryEvent(e) { Tags = tags });
             }
             catch (Exception)
             { }
