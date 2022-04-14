@@ -1,4 +1,7 @@
-﻿using System.Windows;
+﻿using Shannan.Core.Converters;
+using System;
+using System.Windows;
+using System.Windows.Data;
 using System.Windows.Media;
 
 namespace Shannan.Core.Controls
@@ -52,5 +55,68 @@ namespace Shannan.Core.Controls
         }
 
         public static readonly DependencyProperty WatermarkProperty = DependencyProperty.RegisterAttached("Watermark", typeof(string), typeof(ControlHelper), new UIPropertyMetadata(string.Empty));
+
+        public static bool GetIsEllipseClipping(DependencyObject obj)
+        {
+            return (bool)obj.GetValue(IsEllipseClippingProperty);
+        }
+
+        public static void SetIsEllipseClipping(DependencyObject obj, bool value)
+        {
+            obj.SetValue(IsEllipseClippingProperty, value);
+        }
+
+        public static readonly DependencyProperty IsEllipseClippingProperty = DependencyProperty.RegisterAttached("IsEllipseClipping", typeof(bool), typeof(ControlHelper), new PropertyMetadata(false, OnIsEllipseClippingPropertyChanged));
+
+        private static void OnIsEllipseClippingPropertyChanged(DependencyObject d, DependencyPropertyChangedEventArgs e)
+        {
+            UIElement source = d as UIElement;
+
+            if (bool.Parse(e.NewValue.ToString()) == false)
+            {
+                // 如果 IsEllipseClipping 附加属性被设置为 false，则清除 UIElement.Clip 属性。
+                source.ClearValue(UIElement.ClipProperty);
+                return;
+            }
+
+            var ellipse = source.Clip as EllipseGeometry;
+            if (source.Clip != null && ellipse == null)
+            {
+                // 如果 UIElement.Clip 属性被用作其他用途，则抛出异常说明问题所在。
+                throw new InvalidOperationException(
+                    $"{typeof(ControlHelper).FullName}.{IsEllipseClippingProperty.Name} " +
+                    $"is using {source.GetType().FullName}.{UIElement.ClipProperty.Name} " +
+                    "for clipping, dont use this property manually.");
+            }
+
+            ellipse = ellipse ?? new EllipseGeometry();
+
+            // 使用绑定来根据控件的宽高更新椭圆裁剪范围。
+            Binding xBinding = new Binding(FrameworkElement.ActualWidthProperty.Name)
+            {
+                Source = source,
+                Mode = BindingMode.OneWay,
+                Converter = new HalfConverter()
+            };
+            Binding yBinding = new Binding(FrameworkElement.ActualHeightProperty.Name)
+            {
+                Source = source,
+                Mode = BindingMode.OneWay,
+                Converter = new HalfConverter()
+            };
+
+            MultiBinding centerBinding = new MultiBinding
+            {
+                Converter = new SizeToPointConverter(),
+            };
+            centerBinding.Bindings.Add(xBinding);
+            centerBinding.Bindings.Add(yBinding);
+
+            BindingOperations.SetBinding(ellipse, EllipseGeometry.RadiusXProperty, xBinding);
+            BindingOperations.SetBinding(ellipse, EllipseGeometry.RadiusYProperty, yBinding);
+            BindingOperations.SetBinding(ellipse, EllipseGeometry.CenterProperty, centerBinding);
+
+            source.Clip = ellipse;
+        }
     }
 }
