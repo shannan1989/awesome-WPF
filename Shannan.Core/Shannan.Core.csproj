@@ -36,16 +36,16 @@
       <HintPath>..\packages\ControlzEx.4.4.0\lib\net45\ControlzEx.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DeviceId, Version=6.0.0.0, Culture=neutral, PublicKeyToken=f755c371b5c59c52, processorArchitecture=MSIL">
-      <HintPath>..\packages\DeviceId.6.0.0\lib\net40\DeviceId.dll</HintPath>
+    <Reference Include="DeviceId, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f755c371b5c59c52, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeviceId.6.2.0\lib\net40\DeviceId.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DeviceId.Windows, Version=6.0.0.0, Culture=neutral, PublicKeyToken=f755c371b5c59c52, processorArchitecture=MSIL">
-      <HintPath>..\packages\DeviceId.Windows.6.0.0\lib\net40\DeviceId.Windows.dll</HintPath>
+    <Reference Include="DeviceId.Windows, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f755c371b5c59c52, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeviceId.Windows.6.2.0\lib\net40\DeviceId.Windows.dll</HintPath>
       <Private>True</Private>
     </Reference>
-    <Reference Include="DeviceId.Windows.Wmi, Version=6.1.0.0, Culture=neutral, PublicKeyToken=f755c371b5c59c52, processorArchitecture=MSIL">
-      <HintPath>..\packages\DeviceId.Windows.Wmi.6.1.0\lib\net40\DeviceId.Windows.Wmi.dll</HintPath>
+    <Reference Include="DeviceId.Windows.Wmi, Version=6.2.0.0, Culture=neutral, PublicKeyToken=f755c371b5c59c52, processorArchitecture=MSIL">
+      <HintPath>..\packages\DeviceId.Windows.Wmi.6.2.0\lib\net40\DeviceId.Windows.Wmi.dll</HintPath>
       <Private>True</Private>
     </Reference>
     <Reference Include="MahApps.Metro, Version=2.0.0.0, Culture=neutral, PublicKeyToken=51482d6f650b2b3f, processorArchitecture=MSIL">
@@ -83,14 +83,18 @@
     <Compile Include="Controls\TextBoxHelper.cs" />
     <Compile Include="Controls\ToggleButtonHelper.cs" />
     <Compile Include="Converters\BooleanToVisibilityConverter.cs" />
+    <Compile Include="Converters\HalfConverter.cs" />
     <Compile Include="Converters\OppositeConverter.cs" />
+    <Compile Include="Converters\SizeToPointConverter.cs" />
     <Compile Include="Debugging\ConsoleManager.cs" />
     <Compile Include="Debugging\Logger.cs" />
     <Compile Include="Extensions\AnimationExtension.cs" />
+    <Compile Include="Extensions\DateTimeExtension.cs" />
     <Compile Include="Extensions\JTokenExtension.cs" />
     <Compile Include="Extensions\StringExtension.cs" />
     <Compile Include="Framework\Client.cs" />
     <Compile Include="Framework\DataRequest.cs" />
+    <Compile Include="Framework\DownloadTask.cs" />
     <Compile Include="Framework\ImageQueue.cs" />
     <Compile Include="Framework\PrintQueue.cs" />
     <Compile Include="Framework\Session.cs" />
