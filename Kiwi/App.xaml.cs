@@ -10,6 +10,8 @@ namespace Kiwi
 
         protected override void OnStartup(StartupEventArgs e)
         {
+            base.OnStartup(e);
+
             Current.ShutdownMode = ShutdownMode.OnExplicitShutdown;
 
             MainWindow mainWindow = new MainWindow();
