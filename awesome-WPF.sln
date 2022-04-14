@@ -7,6 +7,8 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Kiwi", "Kiwi\Kiwi.csproj", 
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shannan.Core", "Shannan.Core\Shannan.Core.csproj", "{E1731088-92CC-483C-8481-165EBF6DF48A}"
 EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lynx", "Lynx\Lynx.csproj", "{7E7C15FA-F738-4F60-BB43-46BA9C454E2A}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -21,6 +23,10 @@ Global
 		{E1731088-92CC-483C-8481-165EBF6DF48A}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{E1731088-92CC-483C-8481-165EBF6DF48A}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{E1731088-92CC-483C-8481-165EBF6DF48A}.Release|Any CPU.Build.0 = Release|Any CPU
+		{7E7C15FA-F738-4F60-BB43-46BA9C454E2A}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{7E7C15FA-F738-4F60-BB43-46BA9C454E2A}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{7E7C15FA-F738-4F60-BB43-46BA9C454E2A}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{7E7C15FA-F738-4F60-BB43-46BA9C454E2A}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
