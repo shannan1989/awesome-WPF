@@ -274,54 +274,22 @@ namespace Shannan.Core.Framework
         {
             if (_postStream != null)
             {
-                try
-                {
-                    _postStream.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    ex.Data.Add("_postStream", "");
-                    Logger.Instance.ReportException(ex);
-                }
+                _postStream.Dispose();
                 _postStream = null;
             }
             if (_ms != null)
             {
-                try
-                {
-                    _ms.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    ex.Data.Add("_ms", "");
-                    Logger.Instance.ReportException(ex);
-                }
+                _ms.Dispose();
                 _ms = null;
             }
             if (_responseStream != null)
             {
-                try
-                {
-                    _responseStream.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    ex.Data.Add("_responseStream", "");
-                    Logger.Instance.ReportException(ex);
-                }
+                _responseStream.Dispose();
                 _responseStream = null;
             }
             if (_response != null)
             {
-                try
-                {
-                    _response.Dispose();
-                }
-                catch (Exception ex)
-                {
-                    ex.Data.Add("_response", "");
-                    Logger.Instance.ReportException(ex);
-                }
+                _response.Dispose();
                 _response = null;
             }
             _request = null;

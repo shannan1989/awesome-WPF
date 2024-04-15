@@ -103,9 +103,11 @@ namespace Shannan.Core.Framework
             }
         }
 
-        public string FileName { get { return _filename; } }
+        public string FileName
+        { get { return _filename; } }
 
-        public string TempFileName { get { return FileName + Extension; } }
+        public string TempFileName
+        { get { return FileName + Extension; } }
 
         public DownloadStatus Status
         {
