@@ -4,8 +4,6 @@
     <Application.Resources>
         <ResourceDictionary>
             <ResourceDictionary.MergedDictionaries>
-                <ResourceDictionary Source="pack://application:,,,/MahApps.Metro;component/Styles/Themes/Light.Blue.xaml" />
-
                 <ResourceDictionary Source="pack://application:,,,/Styles/Colors.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Styles/Fonts.xaml" />
                 <ResourceDictionary Source="pack://application:,,,/Styles/Controls.xaml" />
