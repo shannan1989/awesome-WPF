@@ -9,6 +9,10 @@ Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Shannan.Core", "Shannan.Cor
 EndProject
 Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "Lynx", "Lynx\Lynx.csproj", "{02C6F7A1-BE95-4CE7-9AD8-625C2A199894}"
 EndProject
+Project("{9A19103F-16F7-4668-BE54-9A1E7A4F7556}") = "HomeAssist", "HomeAssist\HomeAssist.csproj", "{98394B29-58E9-408F-9327-157E2F0CB918}"
+EndProject
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "AnnSpider", "AnnSpider\AnnSpider.csproj", "{E5691EAD-195A-4228-8806-DD7E8E5B0F47}"
+EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
 		Debug|Any CPU = Debug|Any CPU
@@ -27,6 +31,14 @@ Global
 		{02C6F7A1-BE95-4CE7-9AD8-625C2A199894}.Debug|Any CPU.Build.0 = Debug|Any CPU
 		{02C6F7A1-BE95-4CE7-9AD8-625C2A199894}.Release|Any CPU.ActiveCfg = Release|Any CPU
 		{02C6F7A1-BE95-4CE7-9AD8-625C2A199894}.Release|Any CPU.Build.0 = Release|Any CPU
+		{98394B29-58E9-408F-9327-157E2F0CB918}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{98394B29-58E9-408F-9327-157E2F0CB918}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{98394B29-58E9-408F-9327-157E2F0CB918}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{98394B29-58E9-408F-9327-157E2F0CB918}.Release|Any CPU.Build.0 = Release|Any CPU
+		{E5691EAD-195A-4228-8806-DD7E8E5B0F47}.Debug|Any CPU.ActiveCfg = Debug|Any CPU
+		{E5691EAD-195A-4228-8806-DD7E8E5B0F47}.Debug|Any CPU.Build.0 = Debug|Any CPU
+		{E5691EAD-195A-4228-8806-DD7E8E5B0F47}.Release|Any CPU.ActiveCfg = Release|Any CPU
+		{E5691EAD-195A-4228-8806-DD7E8E5B0F47}.Release|Any CPU.Build.0 = Release|Any CPU
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE
