@@ -1,9 +1,6 @@
 ﻿using DotnetSpider;
 using DotnetSpider.DataFlow;
-using DotnetSpider.Downloader;
 using DotnetSpider.Http;
-using DotnetSpider.Scheduler;
-using DotnetSpider.Scheduler.Component;
 using Microsoft.Extensions.Hosting;
 using Microsoft.Extensions.Logging;
 using Microsoft.Extensions.Options;
@@ -13,17 +10,17 @@ namespace AnnSpider.VolleyChina
 {
     internal class VolleyChinaSpider : Spider
     {
-        public VolleyChinaSpider(IOptions<SpiderOptions> options, DependenceServices services, ILogger<Spider> logger) : base(options, services, logger)
+        public VolleyChinaSpider(IOptions<SpiderOptions> options, DependenceServices services, ILogger<VolleyChinaSpider> logger) : base(options, services, logger)
         {
         }
 
         protected override async Task InitializeAsync(CancellationToken stoppingToken = default)
         {
             //添加自定义解析
-            AddDataFlow(new VolleyChinaDataParser());
+            AddDataFlow<VolleyChinaDataParser>();
 
             //使用控制台存储器
-            AddDataFlow(new ConsoleStorage());
+            AddDataFlow<ConsoleStorage>();
 
             //添加采集请求:博客园10天推荐排行榜
             await AddRequestsAsync(new Request("http://www.volleychina.org/allnews/index.html")
@@ -34,10 +31,11 @@ namespace AnnSpider.VolleyChina
 
         internal static async Task RunAsync()
         {
-            var builder = Builder.CreateDefaultBuilder<VolleyChinaSpider>();
+            var builder = Builder.CreateDefaultBuilder<VolleyChinaSpider>(x =>
+            {
+                x.Speed = 5;
+            });
             builder.UseSerilog();
-            builder.UseDownloader<HttpClientDownloader>();
-            builder.UseQueueDistinctBfsScheduler<HashSetDuplicateRemover>();
 
             await builder.Build().RunAsync();
         }
