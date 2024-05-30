@@ -43,5 +43,21 @@ namespace Shannan.Core.Utils
             };
             process.Start();
         }
+
+        /// <summary>
+        /// 调用外部程序
+        /// </summary>
+        /// <param name="path">外部程序路径</param>
+        public static void Run(string path)
+        {
+            Process process = new Process();
+            process.StartInfo = new ProcessStartInfo()
+            {
+                FileName = path,
+                UseShellExecute = false,
+                CreateNoWindow = true
+            };
+            process.Start();
+        }
     }
 }
