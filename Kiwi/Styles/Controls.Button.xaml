@@ -1,3 +1,51 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
-                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+                    xmlns:CoreControls="clr-namespace:Shannan.Core.Controls;assembly=Shannan.Core">
+
+    <Style x:Key="IconButton" TargetType="{x:Type Button}">
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="CoreControls:ButtonHelper.HoverBackground" Value="Transparent" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid Background="Transparent">
+                        <Border x:Name="HoverBackground" Visibility="Collapsed" CornerRadius="3" Background="{Binding Path=(CoreControls:ButtonHelper.HoverBackground),RelativeSource={RelativeSource TemplatedParent}}" />
+                        <Image x:Name="ButtonIcon" Margin="{TemplateBinding Padding}" Stretch="None" Source="{Binding Path=(CoreControls:ButtonHelper.NormalIcon),RelativeSource={RelativeSource TemplatedParent}}" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="true">
+                            <Setter TargetName="HoverBackground" Property="Visibility" Value="Visible" />
+                            <Setter TargetName="ButtonIcon" Property="Source" Value="{Binding Path=(CoreControls:ButtonHelper.HoverIcon),RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsPressed" Value="true">
+                            <Setter TargetName="ButtonIcon" Property="Source" Value="{Binding Path=(CoreControls:ButtonHelper.PressIcon),RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter TargetName="ButtonIcon" Property="Source" Value="{Binding Path=(CoreControls:ButtonHelper.DisableIcon),RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="WindowCloseIconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource IconButton}">
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Width" Value="50" />
+        <Setter Property="CoreControls:ButtonHelper.NormalIcon" Value="pack://application:,,,/Resources/Images/Icons/window-close-normal.png" />
+        <Setter Property="CoreControls:ButtonHelper.HoverIcon" Value="pack://application:,,,/Resources/Images/Icons/window-close-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.PressIcon" Value="pack://application:,,,/Resources/Images/Icons/window-close-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.DisableIcon" Value="pack://application:,,,/Resources/Images/Icons/window-close-normal.png" />
+    </Style>
+
+    <Style x:Key="WindowMinIconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource IconButton}">
+        <Setter Property="Height" Value="50" />
+        <Setter Property="Width" Value="50" />
+        <Setter Property="CoreControls:ButtonHelper.NormalIcon" Value="pack://application:,,,/Resources/Images/Icons/window-min-normal.png" />
+        <Setter Property="CoreControls:ButtonHelper.HoverIcon" Value="pack://application:,,,/Resources/Images/Icons/window-min-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.PressIcon" Value="pack://application:,,,/Resources/Images/Icons/window-min-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.DisableIcon" Value="pack://application:,,,/Resources/Images/Icons/window-min-normal.png" />
+    </Style>
 </ResourceDictionary>
