@@ -1,3 +1,15 @@
 ﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
                     xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <SolidColorBrush x:Key="ColorRed">#ff3b29</SolidColorBrush>
+    <SolidColorBrush x:Key="ColorOrange">#ff9f21</SolidColorBrush>
+    <SolidColorBrush x:Key="ColorGreen">#6ed127</SolidColorBrush>
+    <SolidColorBrush x:Key="ColorPurple">#844fff</SolidColorBrush>
+
+    <SolidColorBrush x:Key="PrimaryTextColor">#222</SolidColorBrush>
+    <SolidColorBrush x:Key="WatermarkTextColor">#999</SolidColorBrush>
+
+    <SolidColorBrush x:Key="PageBackground">#ebebeb</SolidColorBrush>
+
+    <SolidColorBrush x:Key="DelimiterLineBrush">#dedede</SolidColorBrush>
 </ResourceDictionary>
