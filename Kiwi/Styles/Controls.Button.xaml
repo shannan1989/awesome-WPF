@@ -48,4 +48,193 @@
         <Setter Property="CoreControls:ButtonHelper.PressIcon" Value="pack://application:,,,/Resources/Images/Icons/window-min-hover.png" />
         <Setter Property="CoreControls:ButtonHelper.DisableIcon" Value="pack://application:,,,/Resources/Images/Icons/window-min-normal.png" />
     </Style>
+
+    <Style x:Key="DialogCloseIconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource IconButton}">
+        <Setter Property="Height" Value="30" />
+        <Setter Property="Width" Value="30" />
+        <Setter Property="CoreControls:ButtonHelper.NormalIcon" Value="pack://application:,,,/Resources/Images/Icons/dialog-close-normal.png" />
+        <Setter Property="CoreControls:ButtonHelper.HoverIcon" Value="pack://application:,,,/Resources/Images/Icons/dialog-close-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.PressIcon" Value="pack://application:,,,/Resources/Images/Icons/dialog-close-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.DisableIcon" Value="pack://application:,,,/Resources/Images/Icons/dialog-close-normal.png" />
+    </Style>
+
+    <Style x:Key="FullscreenDialogCloseIconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource IconButton}">
+        <Setter Property="Height" Value="60" />
+        <Setter Property="Width" Value="60" />
+        <Setter Property="CoreControls:ButtonHelper.NormalIcon" Value="pack://application:,,,/Resources/Images/Icons/fullscreen-dialog-close-normal.png" />
+        <Setter Property="CoreControls:ButtonHelper.HoverIcon" Value="pack://application:,,,/Resources/Images/Icons/fullscreen-dialog-close-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.PressIcon" Value="pack://application:,,,/Resources/Images/Icons/fullscreen-dialog-close-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.DisableIcon" Value="pack://application:,,,/Resources/Images/Icons/fullscreen-dialog-close-normal.png" />
+    </Style>
+
+    <Style x:Key="GalleryPrevIconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource IconButton}">
+        <Setter Property="Height" Value="60" />
+        <Setter Property="Width" Value="60" />
+        <Setter Property="CoreControls:ButtonHelper.NormalIcon" Value="/Resources/Images/Icons/gallery-prev-normal.png" />
+        <Setter Property="CoreControls:ButtonHelper.HoverIcon" Value="/Resources/Images/Icons/gallery-prev-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.PressIcon" Value="/Resources/Images/Icons/gallery-prev-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.DisableIcon" Value="/Resources/Images/Icons/gallery-prev-disable.png" />
+    </Style>
+
+    <Style x:Key="GalleryNextIconButton" TargetType="{x:Type Button}" BasedOn="{StaticResource IconButton}">
+        <Setter Property="Height" Value="60" />
+        <Setter Property="Width" Value="60" />
+        <Setter Property="CoreControls:ButtonHelper.NormalIcon" Value="/Resources/Images/Icons/gallery-next-normal.png" />
+        <Setter Property="CoreControls:ButtonHelper.HoverIcon" Value="/Resources/Images/Icons/gallery-next-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.PressIcon" Value="/Resources/Images/Icons/gallery-next-hover.png" />
+        <Setter Property="CoreControls:ButtonHelper.DisableIcon" Value="/Resources/Images/Icons/gallery-next-disable.png" />
+    </Style>
+
+    <Style x:Key="BaseButton" TargetType="{x:Type Button}">
+        <Setter Property="FontFamily" Value="pack://application:,,,/Resources/Fonts/iconfont.ttf#iconfont,Microsoft Yahei" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="#fff" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="CoreControls:ControlHelper.CornerRadius" Value="3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="ButtonBackground" CornerRadius="{TemplateBinding CoreControls:ControlHelper.CornerRadius}" Background="{TemplateBinding Background}" />
+                        <ContentPresenter x:Name="ContentPresenter" Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <Border x:Name="ButtonMask" Visibility="Collapsed" CornerRadius="{TemplateBinding CoreControls:ControlHelper.CornerRadius}" Background="#fff" Opacity=".15" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonMask" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value=".3" />
+                            <Setter Property="Cursor" Value="Arrow" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RedButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButton}">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Background" Value="{StaticResource ColorRed}" />
+    </Style>
+
+    <Style x:Key="OrangeButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButton}">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Background" Value="{StaticResource ColorOrange}" />
+    </Style>
+
+    <Style x:Key="PurpleButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButton}">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Background" Value="{StaticResource ColorPurple}" />
+    </Style>
+
+    <Style x:Key="GreenButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BaseButton}">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Background" Value="{StaticResource ColorGreen}" />
+    </Style>
+
+    <Style x:Key="BorderButton" TargetType="{x:Type Button}">
+        <Setter Property="FontFamily" Value="pack://application:,,,/Resources/Fonts/iconfont.ttf#iconfont,Microsoft Yahei" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="#222" />
+        <Setter Property="FontSize" Value="16" />
+        <Setter Property="Background" Value="#fff" />
+        <Setter Property="CoreControls:ControlHelper.CornerRadius" Value="3" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="Border" BorderThickness="1" BorderBrush="{TemplateBinding Foreground}" CornerRadius="{TemplateBinding CoreControls:ControlHelper.CornerRadius}" Background="{TemplateBinding Background}" Opacity=".5" />
+                        <ContentPresenter x:Name="contentPresenter" Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        <Border x:Name="ButtonMask" Visibility="Collapsed" CornerRadius="{TemplateBinding CoreControls:ControlHelper.CornerRadius}" Background="#fff" Opacity=".15" />
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonMask" Property="Visibility" Value="Visible" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="False">
+                            <Setter Property="Opacity" Value=".3" />
+                            <Setter Property="Cursor" Value="Arrow" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="PrimaryBorderButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BorderButton}">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Foreground" Value="#222" />
+    </Style>
+
+    <Style x:Key="OrangeBorderButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BorderButton}">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Foreground" Value="{StaticResource ColorOrange}" />
+    </Style>
+
+    <Style x:Key="PurpleBorderButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BorderButton}">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Foreground" Value="{StaticResource ColorPurple}" />
+    </Style>
+
+    <Style x:Key="RedBorderButton" TargetType="{x:Type Button}" BasedOn="{StaticResource BorderButton}">
+        <Setter Property="Width" Value="130" />
+        <Setter Property="Height" Value="40" />
+        <Setter Property="Foreground" Value="{StaticResource ColorRed}" />
+    </Style>
+
+    <Style x:Key="LinkButton" TargetType="{x:Type Button}">
+        <Setter Property="FontFamily" Value="pack://application:,,,/Resources/Fonts/iconfont.ttf#iconfont,Microsoft Yahei" />
+        <Setter Property="Padding" Value="0" />
+        <Setter Property="Cursor" Value="Hand" />
+        <Setter Property="Foreground" Value="#fff" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+        <Setter Property="BorderThickness" Value="0,0,0,1" />
+        <Setter Property="BorderBrush" Value="Transparent" />
+        <Setter Property="CoreControls:ControlHelper.MouseOverBorderBrush" Value="#000" />
+        <Setter Property="CoreControls:ControlHelper.CornerRadius" Value="0" />
+        <Setter Property="FocusVisualStyle" Value="{x:Null}" />
+        <Setter Property="Template">
+            <Setter.Value>
+                <ControlTemplate TargetType="{x:Type Button}">
+                    <Grid>
+                        <Border x:Name="ButtonBorder" BorderThickness="{TemplateBinding BorderThickness}" BorderBrush="{TemplateBinding BorderBrush}" CornerRadius="{TemplateBinding CoreControls:ControlHelper.CornerRadius}">
+                            <ContentPresenter Margin="{TemplateBinding Padding}" HorizontalAlignment="{TemplateBinding HorizontalContentAlignment}" VerticalAlignment="{TemplateBinding VerticalContentAlignment}" />
+                        </Border>
+                    </Grid>
+                    <ControlTemplate.Triggers>
+                        <Trigger Property="IsMouseOver" Value="True">
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="{Binding Path=(CoreControls:ControlHelper.MouseOverBorderBrush),RelativeSource={RelativeSource TemplatedParent}}" />
+                        </Trigger>
+                        <Trigger Property="IsEnabled" Value="false">
+                            <Setter Property="Foreground" Value="#999" />
+                            <Setter TargetName="ButtonBorder" Property="BorderBrush" Value="Transparent" />
+                        </Trigger>
+                    </ControlTemplate.Triggers>
+                </ControlTemplate>
+            </Setter.Value>
+        </Setter>
+    </Style>
+
+    <Style x:Key="RedLinkButton" TargetType="{x:Type Button}" BasedOn="{StaticResource LinkButton}">
+        <Setter Property="Foreground" Value="{StaticResource ColorRed}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ColorRed}" />
+        <Setter Property="CoreControls:ControlHelper.MouseOverBorderBrush" Value="{StaticResource ColorRed}" />
+    </Style>
+
+    <Style x:Key="PurpleLinkButton" TargetType="{x:Type Button}" BasedOn="{StaticResource LinkButton}">
+        <Setter Property="Foreground" Value="{StaticResource ColorPurple}" />
+        <Setter Property="BorderBrush" Value="{StaticResource ColorPurple}" />
+        <Setter Property="CoreControls:ControlHelper.MouseOverBorderBrush" Value="{StaticResource ColorPurple}" />
+    </Style>
 </ResourceDictionary>
