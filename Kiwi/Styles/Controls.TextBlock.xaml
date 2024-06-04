@@ -1,0 +1,55 @@
+﻿<ResourceDictionary xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+                    xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml">
+
+    <Style x:Key="BaseTextBlock" TargetType="{x:Type TextBlock}">
+        <!--<Setter Property="FontFamily" Value="{StaticResource AliPuHuiTi}" />-->
+        <Setter Property="FontFamily" Value="pack://application:,,,/Resources/Fonts/iconfont.ttf#iconfont,Microsoft Yahei" />
+        <Style.Triggers>
+            <Trigger Property="FontWeight" Value="Bold">
+                <!--<Setter Property="FontFamily" Value="{StaticResource AliPuHuiTiBold}" />-->
+            </Trigger>
+        </Style.Triggers>
+    </Style>
+
+    <Style x:Key="PrimaryTextBlock" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource PrimaryTextColor}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="PrimaryTextBlockColor6" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="#666" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="PrimaryTextBlockColor9" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="#999" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="PrimaryTextBlockColorWhite" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="#fff" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="PrimaryTextBlockColorPurple" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource ColorPurple}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="PrimaryTextBlockColorRed" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource ColorRed}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+
+    <Style x:Key="PrimaryTextBlockColorGreen" TargetType="{x:Type TextBlock}" BasedOn="{StaticResource BaseTextBlock}">
+        <Setter Property="Foreground" Value="{StaticResource ColorGreen}" />
+        <Setter Property="FontSize" Value="14" />
+        <Setter Property="VerticalAlignment" Value="Center" />
+    </Style>
+</ResourceDictionary>
